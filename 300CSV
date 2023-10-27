@@ -1,0 +1,52 @@
+id,ref,condition,loop,min,max,source
+ISA,,,,1,1,""
+ISA,ISA01,,,2,2,'03'
+ISA,ISA02,,,10,10,'330903625'.padRight(cir.min) 
+ISA,ISA03,,,2,2,'01'
+ISA,ISA04,,,10,10,''.padLeft(cir.min)
+ISA,ISA05,,,2,2,'24'
+ISA,ISA06,,,15,15,'330903625'.padRight(cir.min)
+ISA,ISA07,,,2,2,'ZZ'
+ISA,ISA08,,,15,15,'USCSAESTEST'.padRight(cir.min)
+ISA,ISA09,,,6,6,"hash.now = new Date()
+hash.now.format('yyMMdd')"
+ISA,ISA10,,,4,4,hash.now.format('HHmm')
+ISA,ISA11,,,1,1,'^' 
+ISA,ISA12,,,5,5,'00405'
+ISA,ISA13,,,9,9,"import com.freightgate.lr_obx_315.X12Utils
+hash.interchangeControlNumber = X12Utils.incrementInterchangeControlNumber(hash.sql, '315', 'OBX')"
+ISA,ISA14,,,1,1,'0'
+ISA,ISA15,,,1,1,'T'
+ISA,ISA16,,,1,1,':'
+GS,,,,1,1,''
+GS,GS01,,,2,2,'SE'
+GS,GS02,,,2,15,'330903625'
+GS,GS03,,,2,15,'USCSAESTEST'.padRight(cir.min)
+GS,GS04,,,8,8,"hash.now.format('yyyyMMdd')"
+GS,GS05,,,4,8,"hash.now.format('HHmm')"
+GS,GS06,,,1,9,"import com.freightgate.lr_obx_315.X12Utils
+hash.groupControlNumber = X12Utils.incrementGroupControlNumber(hash.sql, '315', 'OBX')
+hash.groupControlNumber.toString().padLeft(cir.min,'0')"
+GS,GS07,,,1,2,'X'
+GS,GS08,,,1,12,'004050'
+,,,"stba1:map:code,date",,,"
+// going to need to define 5 loops
+// Y2 loop (container info), N1 loop (similar to 601), R4 loop (port or terminal), LX loop (H1 inner loop) (item info & HAZMAT)
+// 5 maps?
+
+"
+ST,,,,1,1,''
+ST,ST01,,,3,3,'601'
+ST,ST02,,,4,9,"import com.freightgate.lr_obx_315.X12Utils
+hash.transactionSetControlNumber = X12Utils.allocateTransactionSetControlNumber(9).toUpperCase()"
+B1,,,,1,1,''
+
+SE,,,,1,1,
+SE,SE01,,,1,10,hash.segmentCount
+SE,SE02,,,4,9,hash.transactionSetControlNumber
+GE,,,,1,1,
+GE,GE01,,,1,6,hash.transactionSetCount
+GE,GE02,,,1,9,hash.groupControlNumber
+IEA,,,,1,1,
+IEA,IEA01,,,1,5,hash.functionGroupCount
+IEA,IEA02,,,9,9,hash.interchangeControlNumber
