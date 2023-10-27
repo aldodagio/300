@@ -33,14 +33,16 @@ GS,GS08,,,1,12,'004050'
 // going to need to define 5 loops
 // Y2 loop (container info), N1 loop (similar to 601), R4 loop (port or terminal), LX loop (H1 inner loop) (item info & HAZMAT)
 // 5 maps?
-
 "
 ST,,,,1,1,''
 ST,ST01,,,3,3,'601'
 ST,ST02,,,4,9,"import com.freightgate.lr_obx_315.X12Utils
 hash.transactionSetControlNumber = X12Utils.allocateTransactionSetControlNumber(9).toUpperCase()"
 B1,,,,1,1,''
-
+B1,B101,,,2,4,''
+B1,B102,,,1,30,''
+B1,B103,,,8,8,''
+B1,B104,,,1,1,''
 SE,,,,1,1,
 SE,SE01,,,1,10,hash.segmentCount
 SE,SE02,,,4,9,hash.transactionSetControlNumber
