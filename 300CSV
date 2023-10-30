@@ -60,73 +60,73 @@ W09,W0907,,,1,1,''
 N9,,,,1,1,''
 N9,N901,,,2,3,'BN'
 N9,N902,,,1,30,booking.transportation_ref
+N1,,n1234_1,,1,1,booking.shipper_name
+N1,N101,n1234_1,,2,3,'EX'
+N1,N102,n1234_1,,1,60,booking.shipper_name
 N1,N103,n1234_1,,1,2,'24'
-N1,N104,n1234_1,,2,80,shipment.irs_export_no
-N2,,n1234_1_1,,1,1,((shipment.shipment_status != 'C') && shipment.shipper_name)
-N2,N201,n1234_1_1,,1,60,shipment.shipper_contact
-N2,N202,n1234_1_1,,1,60,"shipment.shipper_phone.substring(4, shipment.shipper_phone.length())"
-N3,,n1234_1_1,,1,1,(shipment.shipment_status != 'C')
-N3,N301,n1234_1_1,,1,55,shipment.shipper_address1
-N3,N302,n1234_1_1,,1,55,(shipment.shipper_address2 + shipment.shipper_address3)
-N4,,n1234_1_1,,1,1,(shipment.shipment_status != 'C')
-N4,N401,n1234_1_1,,2,30,shipment.shipper_city
-N4,N402,n1234_1_1,,2,2,shipment.shipper_state
-N4,N403,n1234_1_1,,3,15,shipment.shipper_postal_code
-N4,N404,n1234_1_1,,2,3,shipment.shipper_country
-N1,,n1234_2,,1,1,shipment.forwarding_agent_name
+N1,N104,n1234_1,,2,80,booking.irs_export_no
+N2,,n1234_1_1,,1,1,((booking.shipment_status != 'C') && booking.shipper_name)
+N2,N201,n1234_1_1,,1,60,booking.shipper_contact
+N3,,n1234_1_1,,1,1,(booking.shipment_status != 'C')
+N3,N301,n1234_1_1,,1,55,booking.shipper_address1
+N3,N302,n1234_1_1,,1,55,(booking.shipper_address2 + booking.shipper_address3)
+N4,,n1234_1_1,,1,1,(booking.shipment_status != 'C')
+N4,N401,n1234_1_1,,2,30,booking.shipper_city
+N4,N402,n1234_1_1,,2,2,booking.shipper_state
+N4,N403,n1234_1_1,,3,15,booking.shipper_postal_code
+N4,N404,n1234_1_1,,2,3,booking.shipper_country
+N1,,n1234_2,,1,1,booking.forwarding_agent_name
 N1,N101,n1234_2,,2,3,'FW'
-N1,N102,n1234_2,,1,60,shipment.forwarding_agent_name
+N1,N102,n1234_2,,1,60,booking.forwarding_agent_name
 N1,N103,n1234_2,,1,2,'24'
-N1,N104,n1234_2,,2,80,shipment.forwarding_agent_code
+N1,N104,n1234_2,,2,80,booking.forwarding_agent_code
 N1,N105,n1234_2,,2,2,'01'
 N1,N106,n1234_2,,2,3,'B2'
-N2,,n1234_2_1,,1,1,((shipment.shipment_status != 'C') && shipment.forwarding_agent_name && shipment.forwarding_agent_phone && shipment.forwarding_agent_contact)
-N2,N201,n1234_2_1,,1,60,shipment.forwarding_agent_contact
-N2,N202,n1234_2_1,,1,60,"shipment.forwarding_agent_phone.substring(4, shipment.forwarding_agent_phone.length())"
-N3,,n1234_2,,1,1,(shipment.shipment_status != 'C')
-N3,N301,n1234_2,,1,55,shipment.forwarding_agent_address1
-N3,N302,n1234_2,,1,55,(shipment.forwarding_agent_address2 + shipment.forwarding_agent_address3)
-N4,,n1234_2,,1,1,(shipment.shipment_status != 'C')
-N4,N401,n1234_2,,2,30,shipment.forwarding_agent_city
-N4,N402,n1234_2,,2,2,shipment.forwarding_agent_state
-N4,N403,n1234_2,,3,15,shipment.forwarding_agent_postal_code
-N4,N404,n1234_2,,2,3,shipment.forwarding_agent_country
-N1,,n1234_3,,1,1,shipment.delivery_name
+N2,,n1234_2_1,,1,1,((booking.shipment_status != 'C') && booking.forwarding_agent_name && booking.forwarding_agent_phone && booking.forwarding_agent_contact)
+N2,N201,n1234_2_1,,1,60,booking.forwarding_agent_contact
+N3,,n1234_2,,1,1,(booking.shipment_status != 'C')
+N3,N301,n1234_2,,1,55,booking.forwarding_agent_address1
+N3,N302,n1234_2,,1,55,(booking.forwarding_agent_address2 + booking.forwarding_agent_address3)
+N4,,n1234_2,,1,1,(booking.shipment_status != 'C')
+N4,N401,n1234_2,,2,30,booking.forwarding_agent_city
+N4,N402,n1234_2,,2,2,booking.forwarding_agent_state
+N4,N403,n1234_2,,3,15,booking.forwarding_agent_postal_code
+N4,N404,n1234_2,,2,3,booking.forwarding_agent_country
+N1,,n1234_3,,1,1,booking.delivery_name
 N1,N101,n1234_3,,2,3,'CN'
-N1,N102,n1234_3,,1,60,shipment.delivery_name
+N1,N102,n1234_3,,1,60,booking.delivery_name
 N1,N103,n1234_3,,1,2,'24'
 N1,N104,n1234_3,,2,80,
 N1,N105,n1234_3,,2,2,'01'
 N1,N106,n1234_3,,2,3,'B2'
-N2,,n1234_3_1,,1,1,((shipment.shipment_status != 'C') && shipment.delivery_name && shipment.delivery_phone && shipment.delivery_contact)
-N2,N201,n1234_3_1,,1,60,shipment.delivery_contact
-N2,N202,n1234_3_1,,1,60,"shipment.delivery_phone.substring(4, shipment.delivery_phone.length())"
-N3,,n1234_3,,1,1,(shipment.shipment_status != 'C')
-N3,N301,n1234_3,,1,55,shipment.delivery_address1
-N3,N302,n1234_3,,1,55,(shipment.delivery_address2 + shipment.delivery_address3)
-N4,,n1234_3,,1,1,(shipment.shipment_status != 'C')
-N4,N401,n1234_3,,2,30,shipment.delivery_city 
-N4,N402,n1234_3,,2,2,shipment.delivery_state
-N4,N403,n1234_3,,3,15,shipment.delivery_postal_code
-N4,N404,n1234_3,,2,3,shipment.delivery_country
-N1,,n1234_4,,1,1,shipment.consignee_name
+N2,,n1234_3_1,,1,1,((booking.shipment_status != 'C') && booking.delivery_name && booking.delivery_contact)
+N2,N201,n1234_3_1,,1,60,booking.delivery_contact
+N3,,n1234_3,,1,1,(booking.shipment_status != 'C')
+N3,N301,n1234_3,,1,55,booking.delivery_address1
+N3,N302,n1234_3,,1,55,(booking.delivery_address2 + booking.delivery_address3)
+N4,,n1234_3,,1,1,(booking.shipment_status != 'C')
+N4,N401,n1234_3,,2,30,booking.delivery_city 
+N4,N402,n1234_3,,2,2,booking.delivery_state
+N4,N403,n1234_3,,3,15,booking.delivery_postal_code
+N4,N404,n1234_3,,2,3,booking.delivery_country
+N1,,n1234_4,,1,1,booking.consignee_name
 N1,N101,n1234_4,,2,3,'IC'
-N1,N102,n1234_4,,1,60,shipment.consignee_name
+N1,N102,n1234_4,,1,60,booking.consignee_name
 N1,N103,n1234_4,,1,2,'ZZ'
-N1,N104,n1234_4,,2,80,shipment.consignee_code
+N1,N104,n1234_4,,2,80,booking.consignee_code
 N1,N105,n1234_4,,2,2,'01'
 N1,N106,n1234_4,,2,3,'B2'
-N2,,n1234_4_1,,1,1,((shipment.shipment_status != 'C') && shipment.consignee_name && shipment.consignee_phone && shipment.consignee_contact)
-N2,N201,n1234_4_1,,1,60,shipment.consignee_contact
-N2,N202,n1234_4_1,,1,60,"shipment.consignee_phone.substring(4, shipment.consignee_phone.length())"
-N3,,n1234_4,,1,1,(shipment.shipment_status != 'C')
-N3,N301,n1234_4,,1,55,shipment.consignee_address1
-N3,N302,n1234_4,,1,55,(shipment.consignee_address2 + shipment.consignee_address3)
-N4,,n1234_4,,1,1,(shipment.shipment_status != 'C')
-N4,N401,n1234_4,,2,30,shipment.consignee_city
-N4,N402,n1234_4,,2,2,shipment.consignee_state
-N4,N403,n1234_4,,3,15,shipment.consignee_postal_code
-N4,N404,n1234_4,,2,3,shipment.consignee_country
+N2,,n1234_4_1,,1,1,((booking.shipment_status != 'C') && booking.consignee_name && booking.consignee_contact)
+N2,N201,n1234_4_1,,1,60,booking.consignee_contact
+N2,N202,n1234_4_1,,1,60,"booking.consignee_phone.substring(4, booking.consignee_phone.length())"
+N3,,n1234_4,,1,1,(booking.shipment_status != 'C')
+N3,N301,n1234_4,,1,55,booking.consignee_address1
+N3,N302,n1234_4,,1,55,(booking.consignee_address2 + booking.consignee_address3)
+N4,,n1234_4,,1,1,(booking.shipment_status != 'C')
+N4,N401,n1234_4,,2,30,booking.consignee_city
+N4,N402,n1234_4,,2,2,booking.consignee_state
+N4,N403,n1234_4,,3,15,booking.consignee_postal_code
+N4,N404,n1234_4,,2,3,booking.consignee_country
 G61,,,,1,1,''
 G61,G6101,,,2,2,''
 G61,G6102,,,1,60,''
