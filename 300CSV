@@ -175,10 +175,10 @@ DTM,,r4_2_1,,1,15,(booking.delivery_date && booking.delivery_start_time && booki
 DTM,DTM01,r4_2_1,,3,3,'139'
 DTM,DTM02,r4_2_1,,8,8,booking.delivery_date
 DTM,DTM03,r4_2_1,,4,8,booking.delivery_start_time
-R4,,r4_3,,1,1,booking.origin_unload_point
+R4,,r4_3,,1,1,booking.origin_load_point
 R4,R401,r4_3,,1,1,'L'
 R4,R402,r4_3,,1,2,'UN'
-R4,R403,r4_3,,1,30,booking.origin_unload_point
+R4,R403,r4_3,,1,30,booking.origin_load_point
 R4,R404,r4_3,,2,24,booking.origin_name
 R4,R405,r4_3,,2,3,booking.origin_country
 R4,R408,r4_3,,2,2,booking.shipper_state
@@ -186,10 +186,10 @@ DTM,,r4_3_1,,1,15,(booking.pickup_date && booking.pickup_start_time && booking.p
 DTM,DTM01,r4_3_1,,3,3,'139'
 DTM,DTM02,r4_3_1,,8,8,booking.pickup_date
 DTM,DTM03,r4_3_1,,4,8,booking.pickup_start_time
-R4,,r4_4,,1,1,booking.origin_unload_point
+R4,,r4_4,,1,1,booking.origin_load_point
 R4,R401,r4_4,,1,1,'R'
 R4,R402,r4_4,,1,2,'UN'
-R4,R403,r4_4,,1,30,booking.origin_unload_point
+R4,R403,r4_4,,1,30,booking.origin_load_point
 R4,R404,r4_4,,2,24,booking.origin_name
 R4,R405,r4_4,,2,3,booking.origin_country
 R4,R408,r4_4,,2,2,booking.shipper_state
