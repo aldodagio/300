@@ -30,10 +30,33 @@ hash.groupControlNumber.toString().padLeft(cir.min,'0')"
 GS,GS07,,,1,2,'X'
 GS,GS08,,,1,12,'004010'
 ,,,"stba1:map:code,date",,,"
-// going to need to define 5 loops
-// Y2 loop (container info), N1 loop (similar to 601), R4 loop (port or terminal), LX loop (H1 inner loop) (item info & HAZMAT)
-// 5 maps?
+// LX loop details generation
+import groovy.json.JsonSlurper
+ def booking = new JsonSlurper().parseText(jsonString)
+    def arrayListOfMaps = []
 
+    def suffixes = booking.keySet().findAll { it =~ "\\.[0-9]+\$" }.collect { it.tokenize(".")[1] as int }.unique()
+
+    suffixes.each { suffix ->
+        def mapEntry = [:]
+        booking.keySet().each { key ->
+            if (key =~ "\\.$suffix\$") {
+                mapEntry[key] = booking[key]
+            }
+        }
+        arrayListOfMaps << mapEntry
+    }
+
+    def numberMap = [:]
+
+    arrayListOfMaps.each { mapEntry ->
+        mapEntry.each { key, value ->
+            def number = key.tokenize(".")[1]
+            numberMap[number] = value
+        }
+    }
+hash.map = numberMap // set the hash.map value to the size of the number of items in the booking
+hash.array = arrayListOfMaps
 "
 ST,,,,1,1,''
 ST,ST01,,,3,3,'300'
