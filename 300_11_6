@@ -13,8 +13,8 @@ hash.now.format('yyMMdd')"
 ISA,ISA10,,,4,4,hash.now.format('HHmm')
 ISA,ISA11,,,1,1,'U' 
 ISA,ISA12,,,5,5,'00401'
-ISA,ISA13,,,9,9,"import com.freightgate.lr_obx_315.X12Utils
-hash.interchangeControlNumber = X12Utils.incrementInterchangeControlNumber(hash.sql, '300', 'OOLU')".padLeft(cir.min)
+ISA,ISA13,,,9,9,'import com.freightgate.lr_obx_315.X12Utils
+hash.interchangeControlNumber = X12Utils.incrementInterchangeControlNumber(hash.sql, '300', 'OOLU')'.padLeft(cir.min)
 ISA,ISA14,,,1,1,'0'
 ISA,ISA15,,,1,1,'T'
 ISA,ISA16,,,1,1,':'
