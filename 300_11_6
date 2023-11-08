@@ -94,7 +94,7 @@ N9,N902,,,1,30,booking.booking_no
 N1,,n1234_1,,1,1,booking.shipper_name
 N1,N101,n1234_1,,2,3,'BK'
 N1,N102,n1234_1,,1,60,booking.shipper_name
-N1,N103,n1234_1,,1,2,'24'
+N1,N103,n1234_1,,1,2,'25'
 N1,N104,n1234_1,,2,80,booking.irs_export_no
 N2,,n1234_1_1,,1,1,booking.shipper_name
 N2,N201,n1234_1_1,,1,60,booking.shipper_contact
