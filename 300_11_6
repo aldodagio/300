@@ -1,7 +1,7 @@
 id,ref,condition,loop,min,max,source
 ISA,,,,1,1,""
 ISA,ISA01,,,2,2,'00'
-ISA,ISA02,,,10,10,'330903625'.padRight(cir.min) 
+ISA,ISA02,,,10,10,''.padRight(cir.min) 
 ISA,ISA03,,,2,2,'00'
 ISA,ISA04,,,10,10,''.padLeft(cir.min)
 ISA,ISA05,,,2,2,'ZZ'
@@ -14,7 +14,7 @@ ISA,ISA10,,,4,4,hash.now.format('HHmm')
 ISA,ISA11,,,1,1,'U' 
 ISA,ISA12,,,5,5,'00401'
 ISA,ISA13,,,9,9,"import com.freightgate.lr_obx_315.X12Utils
-hash.interchangeControlNumber = X12Utils.incrementInterchangeControlNumber(hash.sql, '315', 'OBX')"
+hash.interchangeControlNumber = X12Utils.incrementInterchangeControlNumber(hash.sql, '300', 'OOLU')".padLeft(cir.min)
 ISA,ISA14,,,1,1,'0'
 ISA,ISA15,,,1,1,'T'
 ISA,ISA16,,,1,1,':'
@@ -25,7 +25,7 @@ GS,GS03,,,2,15,'CARGOSMART'.padRight(cir.min)
 GS,GS04,,,8,8,"hash.now.format('yyyyMMdd')"
 GS,GS05,,,4,8,"hash.now.format('HHmm')"
 GS,GS06,,,1,9,"import com.freightgate.lr_obx_315.X12Utils
-hash.groupControlNumber = X12Utils.incrementGroupControlNumber(hash.sql, '315', 'OBX')
+hash.groupControlNumber = X12Utils.incrementGroupControlNumber(hash.sql, '300', 'OOLU')
 hash.groupControlNumber.toString().padLeft(cir.min,'0')"
 GS,GS07,,,1,2,'X'
 GS,GS08,,,1,12,'004010'
@@ -78,26 +78,20 @@ Y1,Y101,,,8,8,booking.etd
 Y1,Y102,,,8,8,booking.eta
 Y1,Y103,,,2,4,booking.carrier_id
 Y1,Y108,,,2,2,'PP'
-Y2,,y2_1,,1,1,booking.cargo_summary_eq_type1
+Y2,,y2_1,,1,1,(booking.cargo_summary_eq_type1 || booking.cargo_summary_eq_type2 || booking.cargo_summary_eq_type3)
 Y2,Y201,y2_1,,1,4,'1'
 Y2,Y202,y2_1,,1,1,'C'
 Y2,Y203,y2_1,,2,2,hash.serviceCode
 Y2,Y204,y2_1,,4,4,'22G0'
-Y2,,y2_2,,1,1,booking.cargo_summary_eq_type2
-Y2,Y201,y2_2,,1,4,'1'
-Y2,Y202,y2_2,,1,1,'C'
-Y2,Y203,y2_2,,2,2,hash.serviceCode
-Y2,Y204,y2_2,,4,4,'22G0'
-Y2,,y2_3,,1,1,booking.cargo_summary_eq_type3
-Y2,Y201,y2_3,,1,4,'1'
-Y2,Y202,y2_3,,1,1,'C'
-Y2,Y203,y2_3,,2,2,hash.serviceCode
-Y2,Y204,y2_3,,4,4,'22G0'
+W09,,y2_1_1,,1,1,(booking.temp && booking.temp_unit)
+W09,W0901,y2_1_1,,2,2,'CZ'
+W09,W0902,y2_1_1,,1,4,booking.temp
+W09,W0903,y2_1_1,,2,2,booking.temp_unit
 N9,,,,1,99,''
 N9,N901,,,2,3,'BN'
 N9,N902,,,1,30,booking.booking_no
 N1,,n1234_1,,1,1,booking.shipper_name
-N1,N101,n1234_1,,2,3,'EX'
+N1,N101,n1234_1,,2,3,'BK'
 N1,N102,n1234_1,,1,60,booking.shipper_name
 N1,N103,n1234_1,,1,2,'24'
 N1,N104,n1234_1,,2,80,booking.irs_export_no
@@ -112,7 +106,7 @@ N4,N402,n1234_1_1,,2,2,booking.shipper_state
 N4,N403,n1234_1_1,,3,15,booking.shipper_postal_code
 N4,N404,n1234_1_1,,2,3,booking.shipper_country
 G61,,n1234_1_1,,1,1,((booking.shipment_status != 'C') && booking.shipper_name && booking.shipper_phone && booking.shipper_contact)
-G61,G6101,n1234_1_1,,2,2,'IC'
+G61,G6101,n1234_1_1,,2,2,'N1'
 G61,G6102,n1234_1_1,,1,60,booking.shipper_contact
 G61,G6103,n1234_1_1,,2,2,''
 G61,G6104,n1234_1_1,,1,80,"booking.shipper_phone.substring(4, booking.shipper_phone.length())"
