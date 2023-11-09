@@ -113,8 +113,6 @@ G61,G6104,n1234_1_1,,1,80,"booking.shipper_phone.substring(4, booking.shipper_ph
 N1,,n1234_2,,1,1,booking.forwarding_agent_name
 N1,N101,n1234_2,,2,3,'FW'
 N1,N102,n1234_2,,1,60,booking.forwarding_agent_name
-N1,N103,n1234_2,,1,2,'25'
-N1,N104,n1234_2,,2,80,booking.forwarding_agent_code
 N3,,n1234_2,,1,1,''
 N3,N301,n1234_2,,1,55,booking.forwarding_agent_address1 + booking.forwarding_agent_address2 + booking.forwarding_agent_address3
 N4,,n1234_2,,1,1,''
@@ -130,8 +128,6 @@ G61,G6104,n1234_2_1,,1,80,"booking.forwarding_agent_phone.substring(4, booking.f
 N1,,n1234_3,,1,1,booking.delivery_name
 N1,N101,n1234_3,,2,3,'CN'
 N1,N102,n1234_3,,1,60,booking.delivery_name
-N1,N103,n1234_3,,1,2,'25'
-N1,N104,n1234_3,,2,80,booking.delivery_code
 N3,,n1234_3,,1,1,''
 N3,N301,n1234_3,,1,55,(booking.delivery_address1 + booking.delivery_address2 + booking.delivery_address3)
 N4,,n1234_3,,1,1,''
@@ -147,8 +143,6 @@ G61,G6104,n1234_3_1,,1,80,"booking.delivery_phone.substring(4, booking.delivery_
 N1,,n1234_4,,1,1,booking.consignee_name
 N1,N101,n1234_4,,2,3,'N1'
 N1,N102,n1234_4,,1,60,booking.consignee_name
-N1,N103,n1234_4,,1,2,'25'
-N1,N104,n1234_4,,2,80,booking.consignee_code
 N3,,n1234_4,,1,1,''
 N3,N301,n1234_4,,1,55,(booking.consignee_address1 + booking.consignee_address2 + booking.consignee_address3)
 N4,,n1234_4,,1,1,''
