@@ -239,8 +239,6 @@ V1,V101,,,1,20,booking.vessel_name
 V1,V102,,,2,35,''
 V1,V104,,,2,10,''
 V1,V105,,,2,4,booking.carrier_id
-V1,V107,,,2,2,''
-V1,V108,,,1,1,''
 SE,,,,1,1,
 SE,SE01,,,1,10,hash.segmentCount
 SE,SE02,,,4,9,hash.transactionSetControlNumber
