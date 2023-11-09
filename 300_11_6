@@ -118,7 +118,7 @@ N1,N104,n1234_2,,2,80,booking.forwarding_agent_code
 N1,N105,n1234_2,,2,2,'01'
 N1,N106,n1234_2,,2,3,'B2'
 N3,,n1234_2,,1,1,''
-N3,N301,n1234_2,,1,55,(booking.forwarding_agent_address1 + booking.forwarding_agent_address2 + booking.forwarding_agent_address3)
+N3,N301,n1234_2,,1,55,booking.forwarding_agent_address1 + booking.forwarding_agent_address2 + booking.forwarding_agent_address3
 N4,,n1234_2,,1,1,''
 N4,N401,n1234_2,,2,30,booking.forwarding_agent_city
 N4,N402,n1234_2,,2,2,booking.forwarding_agent_state
@@ -156,7 +156,7 @@ N1,N104,n1234_4,,2,80,booking.consignee_code
 N1,N105,n1234_4,,2,2,'01'
 N1,N106,n1234_4,,2,3,'B2'
 N3,,n1234_4,,1,1,''
-N3,N301,n1234_4,,1,55(,booking.consignee_address1 + booking.consignee_address2 + booking.consignee_address3)
+N3,N301,n1234_4,,1,55,(booking.consignee_address1 + booking.consignee_address2 + booking.consignee_address3)
 N4,,n1234_4,,1,1,''
 N4,N401,n1234_4,,2,30,booking.consignee_city
 N4,N402,n1234_4,,2,2,booking.consignee_state
