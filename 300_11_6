@@ -108,7 +108,7 @@ N4,N404,n1234_1_1,,2,3,booking.shipper_country
 G61,,n1234_1_1,,1,1,(booking.shipper_name && booking.shipper_phone && booking.shipper_contact)
 G61,G6101,n1234_1_1,,2,2,'IC'
 G61,G6102,n1234_1_1,,1,60,booking.shipper_contact
-G61,G6103,n1234_1_1,,2,2,''
+G61,G6103,n1234_1_1,,2,2,'TE'
 G61,G6104,n1234_1_1,,1,80,"booking.shipper_phone.substring(4, booking.shipper_phone.length())"
 N1,,n1234_2,,1,1,booking.forwarding_agent_name
 N1,N101,n1234_2,,2,3,'FW'
