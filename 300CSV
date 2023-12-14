@@ -68,7 +68,7 @@ def extractNumericSuffix(str) {
     def index = str.length() - 1
 
     while (index >= 0 && Character.isDigit(str.charAt(index))) {
-        suffix = str.charAt(index) + suffix
+        suffix = String.valueOf(str.charAt(index)) + suffix
         index--
     }
 
