@@ -64,7 +64,7 @@ if (booking['cargo_summary_package_type'].equalsIgnoreCase('FCL')) {
 
 // Function to extract numeric suffix from a string
 def extractNumericSuffix(str) {
-    def suffix = ""
+    def suffix = ''
     def index = str.length() - 1
 
     while (index >= 0 && Character.isDigit(str.charAt(index))) {
